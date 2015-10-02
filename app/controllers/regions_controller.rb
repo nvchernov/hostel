@@ -15,10 +15,12 @@ class RegionsController < ApplicationController
   # GET /regions/new
   def new
     @region = Region.new
+    @countries = Country.all
   end
 
   # GET /regions/1/edit
   def edit
+    @countries = Country.all
   end
 
   # POST /regions
