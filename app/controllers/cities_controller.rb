@@ -1,5 +1,5 @@
 class CitiesController < ApplicationController
-  before_action :set_city, only: [:show, :edit, :update, :destroy]
+  before_action :set_city, only: [:show, :edit, :update, :destroy, :get_by_region]
 
   # GET /cities
   # GET /cities.json
@@ -63,10 +63,16 @@ class CitiesController < ApplicationController
     end
   end
 
+  def get_by_region
+     render json: { :cities => City.where(:region_id => params[:region_id]).select(:id, :name) }
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_city
-      @city = City.find(params[:id])
+      if !params[:id].nil?
+        @city = City.find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
