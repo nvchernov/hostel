@@ -6,13 +6,8 @@
 </p>
 
 <p>
-  <strong>Region:</strong>
-  <%= @hotel.region %>
-</p>
-
-<p>
   <strong>City:</strong>
-  <%= @hotel.city %>
+  <%= @hotel.city.name %>
 </p>
 
 <%= link_to 'Edit', edit_hotel_path(@hotel) %> |

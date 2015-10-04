@@ -1,3 +1,4 @@
 class Country < ActiveRecord::Base
-  has_many :region
+  has_many :regions
+
 end

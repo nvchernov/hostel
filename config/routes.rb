@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   match 'cities/get_by_region' => 'cities#get_by_region', via: :post
+  match 'hotels/index_form' => 'hotels#index_form', via: :post
   resources :hotels
   resources :cities
   resources :regions
