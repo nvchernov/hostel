@@ -1,25 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Hotels</h1>
+<h1>Список турбаз</h1>
 
 <div>
-  <form action="/hotels" id="index_hotel">
-
-    <%= select_tag(:hotel_country_id, options_for_select(['-'] + @countries.collect { |p| [p.name,p.id] })  )%>
-    <%= select_tag(:hotel_region_id, options_for_select(['-']) )%>
-    <%= select_tag(:hotel_city_id, options_for_select(['-']) )%>
-
+  <form action="/hotels" id="index_hotel" class="form-horizontal  col-xs-12">
+    <div class="form-group">
+      <label for=":hotel_country_id">Страна</label>
+    <%= select_tag(:hotel_country_id, options_for_select(['-'] + @countries.collect { |p| [p.name,p.id] }),
+            {:class => 'form-control'})%>
+    </div>
+    <div class="form-group">
+      <label for=":hotel_region_id">Регион</label>
+      <%= select_tag(:hotel_region_id, options_for_select(['-']), {:class => 'form-control'} )%>
+    </div>
+    <div class="form-group">
+      <label for=":hotel_city_id">Город</label>
+      <%= select_tag(:hotel_city_id, options_for_select(['-']), {:class => 'form-control'} )%>
+    </div>
   </form>
-  <%=  %>
-
-  <%=  %>
 
 </div>
-<div id="hotels_container_id">
 
-  <table>
 
-    <tr><td>name</td><td></td></tr>
+  <table class="table table-striped" id="hotels_container_id">
+
+    <tr><th>Название</th><th>Действия</th></tr>
     <% @hotels.each do |hotel| %>
         <tr>
           <td><%= hotel.name %></td>
@@ -30,9 +35,6 @@
     <% end %>
 
   </table>
-</div>
-
-
 
 <br>
 

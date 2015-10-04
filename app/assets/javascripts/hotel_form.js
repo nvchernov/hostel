@@ -77,16 +77,16 @@ $(function() {
 
         render_hotels:function(){
             this.$hotels_div.html('');
-            this.$hotels_div.append('<table>');
-            this.$hotels_div.append('<tr><td>Name</td><td></td></tr>');
+
+            this.$hotels_div.append('<tr><th>Название</th><th>Действия</th></tr>');
             this.model.get('hotels').forEach((function(v,i){
                 var links =
                 '<a href="/hotels/' + v.id + '">Show</a> ' +
                 '<a href="/hotels/' + v.id + '/edit">Edit</a> ' +
-                '<a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/hotels/' + v.id + '">Destroy</a>';
+                '<a data-confirm="Вы уверены?" rel="nofollow" data-method="delete" href="/hotels/' + v.id + '">Destroy</a>';
                 this.$hotels_div.append('<tr><td>' + v.name + ' </td><td>' + links + '</td></tr>')
             }),this);
-            this.$hotels_div.append('</table>');
+
         },
 
         render:function(){
