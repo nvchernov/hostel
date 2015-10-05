@@ -5,9 +5,8 @@ class HotelsController < ApplicationController
   # GET /hotels.json
   def index
     @countries = Country.all
-    @regions = Region.where(:country_id => @countries.first.id)
-    @cities = City.where(:region_id => @regions.first.id)
-    #@hotels = Hotel.where(:city_id => @cities.first.id)
+    @regions = @countries.length == 0 ? Region.all : Region.where(:country_id => @countries.first.id)
+    @cities = @regions.length == 0 ? City.all : City.where(:region_id => @regions.first.id)
     @hotels = Hotel.all
   end
 
@@ -20,13 +19,13 @@ class HotelsController < ApplicationController
   def new
     @hotel = Hotel.new
     @regions = Region.all
-    @cities = City.where(:region_id => @regions.first.id)
+    @cities = @regions.length == 0 ? City.all : City.where(:region_id => @regions.first.id)
   end
 
   # GET /hotels/1/edit
   def edit
     @regions = Region.all
-    @cities = City.where(:region_id => @regions.first.id)
+    @cities = @regions.length == 0 ? City.all : City.where(:region_id => @regions.first.id)
   end
 
   # POST /hotels
