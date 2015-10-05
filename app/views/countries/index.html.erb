@@ -2,26 +2,22 @@
 
 <h1>Список стран</h1>
 
-<table class="table">
-  <thead>
+<table class="table table-striped">
     <tr>
-      <th>Название</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+        <th>Название</th>
+        <th>Действия</th>
     <% @countries.each do |country| %>
-      <tr>
+    <tr>
         <td><%= country.name %></td>
-        <td><%= link_to 'Show', country %></td>
-        <td><%= link_to 'Edit', edit_country_path(country) %></td>
-        <td><%= link_to 'Destroy', country, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
-      </tr>
+        <td>
+        <%= link_to 'Показать', country %>
+        <%= link_to 'Редактировать', edit_country_path(country) %>
+        <%= link_to 'Удалить', country, method: :delete, data: { confirm: 'Вы уверены?' } %>
+        </td>
+    </tr>
     <% end %>
-  </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Country', new_country_path %>
+<%= link_to '+ Создать страну', new_country_path, {:class => 'btn btn-success'} %>

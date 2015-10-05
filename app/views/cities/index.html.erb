@@ -2,28 +2,23 @@
 
 <h1>Список городов</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Region</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<table class="table table-striped">
+  <tr>
+    <th>Название</th>
+    <th>Действия</th>
     <% @cities.each do |city| %>
       <tr>
         <td><%= city.name %></td>
-        <td><%= city.region.name %></td>
-        <td><%= link_to 'Show', city %></td>
-        <td><%= link_to 'Edit', edit_city_path(city) %></td>
-        <td><%= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Показать', city %>
+          <%= link_to 'Редактировать', edit_city_path(city) %>
+          <%= link_to 'Удалить', city, method: :delete, data: { confirm: 'Вы уверены?' } %>
+        </td>
       </tr>
-    <% end %>
-  </tbody>
+  <% end %>
 </table>
 
 <br>
 
-<%= link_to 'New City', new_city_path %>
+<%= link_to '+ Создать город', new_city_path, {:class => 'btn btn-success'} %>
+

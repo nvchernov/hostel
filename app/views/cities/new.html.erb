@@ -1,5 +1,8 @@
-<h1>Создать город</h1>
+<div class="panel panel-default">
+  <div class="panel-heading"><h3>Создание города</h3></div>
+  <div class="panel-body">
+    <%= render 'form' %>
+  </div>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', cities_path %>
+<%= link_to 'Назад', cities_path, {:class => 'btn btn-default'} %>

@@ -1,6 +1,10 @@
-<h1>Editing Region</h1>
+<div class="panel panel-default">
+  <div class="panel-heading"><h3>Редактирование региона</h3></div>
+  <div class="panel-body">
+    <%= render 'form' %>
+  </div>
+</div>
 
-<%= render 'form' %>
+<%= link_to 'Назад', regions_path, {:class => 'btn btn-default'} %>
+<%= link_to  'Подробно', @region, {:class => 'btn btn-default'} %>
 
-<%= link_to 'Show', @region %> |
-<%= link_to 'Back', regions_path %>

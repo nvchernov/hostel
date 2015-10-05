@@ -1,14 +1,11 @@
 <p id="notice"><%= notice %></p>
+<h1>Подробно</h1>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <strong>Название города:</strong><br/>
+    <%= @city.name %>
+  </div>
+</div>
+<%= link_to 'Назад', city_path, {:class => 'btn btn-default'} %>
+<%= link_to 'Редактировать', edit_city_path(@city), {:class => 'btn btn-default'} %>
 
-<p>
-  <strong>Название:</strong>
-  <%= @city.name %>
-</p>
-
-<p>
-  <strong>Регион:</strong>
-  <%= @city.region.name %>
-</p>
-
-<%= link_to 'Edit', edit_city_path(@city) %> |
-<%= link_to 'Back', cities_path %>

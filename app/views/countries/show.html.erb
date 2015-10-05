@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
+<h1>Подробно</h1>
+<div class="panel panel-default">
+    <div class="panel-body">
+    <strong>Название страны:</strong><br/>
+    <%= @country.name %>
+  </div>
+</div>
+<%= link_to 'Назад', countries_path, {:class => 'btn btn-default'} %>
+<%= link_to 'Редактировать', edit_country_path(@country), {:class => 'btn btn-default'} %>
 
-<p>
-  <strong>Название:</strong>
-  <%= @country.name %>
-</p>
-
-<%= link_to 'Edit', edit_country_path(@country) %> |
-<%= link_to 'Back', countries_path %>

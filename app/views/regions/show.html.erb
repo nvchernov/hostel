@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
+<h1>Подробно</h1>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <strong>Страна:</strong>
+    <%= @region.country.nil? ? '-' : @region.country.name %>
+    <br/>
+    <strong>Название:</strong>
+    <%= @region.name %>
+  </div>
+</div>
+<%= link_to 'Назад', regions_path, {:class => 'btn btn-default'} %>
+<%= link_to 'Редактировать', edit_region_path(@region), {:class => 'btn btn-default'} %>
 
-<p>
-  <strong>Название:</strong>
-  <%= @region.name %>
-</p>
-
-<p>
-  <strong>Страна:</strong>
-  <%= @region.country.name %>
-</p>
-
-<%= link_to 'Edit', edit_region_path(@region) %> |
-<%= link_to 'Back', regions_path %>

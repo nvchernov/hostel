@@ -11,11 +11,11 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+   <label for="country_name">Название</label><br>
+    <%= f.text_field :name, {:class => 'form-control' } %>
   </div>
   <div class="actions">
-    <input type="submit" value="ок"/>
+    <input type="submit" value="Ок" class="btn btn-primary"/>
   </div>
 <% end %>
