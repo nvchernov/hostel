@@ -1,4 +1,4 @@
 class City < ActiveRecord::Base
-  belongs_to :region
-  has_many :hotels
+  belongs_to :region, :dependent => :destroy
+  has_many :hotels, :dependent => :delete_all
 end
