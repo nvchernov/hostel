@@ -5,16 +5,16 @@
 <div>
   <form action="/hotels" id="index_hotel" class="form-horizontal  col-xs-12">
     <div class="form-group">
-      <label for=":hotel_country_id">Страна</label>
+      <label for=":hotel_country_id"><a href="/countries/new"><span class="label label-success">+</span></a> Страна</label>
     <%= select_tag(:hotel_country_id, options_for_select(['-'] + @countries.collect { |p| [p.name,p.id] }),
             {:class => 'form-control'})%>
     </div>
     <div class="form-group">
-      <label for=":hotel_region_id">Регион</label>
+      <label for=":hotel_region_id"><a href="/regions/new"><span class="label label-success">+</span></a> Регион</label>
       <%= select_tag(:hotel_region_id, options_for_select(['-']), {:class => 'form-control'} )%>
     </div>
     <div class="form-group">
-      <label for=":hotel_city_id">Город</label>
+      <label for=":hotel_city_id"><a href="/cities/new"><span class="label label-success">+</span></a> Город</label>
       <%= select_tag(:hotel_city_id, options_for_select(['-']), {:class => 'form-control'} )%>
     </div>
   </form>
@@ -28,9 +28,11 @@
     <% @hotels.each do |hotel| %>
         <tr>
           <td><%= hotel.name %></td>
-          <td><%= link_to 'Show', hotel %>
-            <%= link_to 'Edit', edit_hotel_path(hotel) %>
-            <%= link_to 'Destroy', hotel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td>
+            <%= link_to 'Показать', hotel %>
+            <%= link_to 'Редактировать', edit_hotel_path(hotel) %>
+            <%= link_to 'Удалить', hotel, method: :delete, data: { confirm: 'Вы уверены?' } %>
+          </td>
         </tr>
     <% end %>
 
@@ -38,4 +40,4 @@
 
 <br>
 
-<%= link_to 'New Hotel', new_hotel_path %>
+<%= link_to '+ Создать турбазу', new_hotel_path, {:class => 'btn btn-success'} %>

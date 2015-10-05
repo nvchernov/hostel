@@ -11,19 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <label>Название:</label><br>
+    <%= f.text_field :name, {:class => 'form-control' } %>
   </div>
-  <div class="field">
-    <%= f.label :region_id %><br>
-    <%= f.select :region_id, @regions.collect { |p| [p.name,p.id] } %>
+  <div class="form-group">
+    <label>Регион:</label><br>
+    <%= f.select :region_id, @regions.collect { |p| [p.name,p.id] }, {}, {:class => 'form-control' } %>
   </div>
-  <div class="field">
-    <%= f.label :city_id %><br>
-    <%= f.select :city_id, @cities.collect { |p| [p.name,p.id] } %>
+  <div class="form-group">
+    <label>Город:</label><br>
+    <%= f.select :city_id, @cities.collect { |p| [p.name,p.id] }, {}, {:class => 'form-control' } %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <input type="submit" value="Ок" class="btn btn-primary"/>
   </div>
 <% end %>

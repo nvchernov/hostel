@@ -81,12 +81,11 @@ $(function() {
             this.$hotels_div.append('<tr><th>Название</th><th>Действия</th></tr>');
             this.model.get('hotels').forEach((function(v,i){
                 var links =
-                '<a href="/hotels/' + v.id + '">Show</a> ' +
-                '<a href="/hotels/' + v.id + '/edit">Edit</a> ' +
-                '<a data-confirm="Вы уверены?" rel="nofollow" data-method="delete" href="/hotels/' + v.id + '">Destroy</a>';
+                '<a href="/hotels/' + v.id + '">Показать</a> ' +
+                '<a href="/hotels/' + v.id + '/edit">Редактировать</a> ' +
+                '<a data-confirm="Вы уверены?" rel="nofollow" data-method="delete" href="/hotels/' + v.id + '">Удалить</a>';
                 this.$hotels_div.append('<tr><td>' + v.name + ' </td><td>' + links + '</td></tr>')
             }),this);
-
         },
 
         render:function(){
