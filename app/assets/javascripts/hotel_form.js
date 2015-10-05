@@ -10,7 +10,7 @@ $(function() {
 
     var HotelIndexForm = Backbone.View.extend({
         model:  hotelFormModel,
-        url: 'http://localhost:3000/hotels/index_form',
+        url: 'hotels/index_form',
 
         $country:   $('#hotel_country_id'),
         $region:    $('#hotel_region_id'),

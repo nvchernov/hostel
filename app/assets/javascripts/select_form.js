@@ -17,7 +17,7 @@ $(function() {
             this.setElement($('#new_hotel'));
             if (this.$el.length == 0)
                 this.setElement($('[id^=edit_hotel_]'));
-            this.model.url = "http://localhost:3000/cities/get_by_region";
+            this.model.url = "cities/get_by_region";
             this.$region = $(this.region);
             this.$city = $(this.city);
         },
