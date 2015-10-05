@@ -1,14 +1,12 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @hotel.name %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @hotel.city.name %>
-</p>
-
-<%= link_to 'Edit', edit_hotel_path(@hotel) %> |
-<%= link_to 'Back', hotels_path %>
+<h1>Подробно</h1>
+<div class="panel panel-default">
+  <div class="panel-body">
+      <strong>Название:</strong>
+      <%= @hotel.name %><br/>
+      <strong>Город:</strong>
+      <%= @hotel.city.name %>
+  </div>
+</div>
+<%= link_to 'Назад', hotels_path, {:class => 'btn btn-default'} %>
+<%= link_to 'Редактировать', edit_hotel_path(@hotel), {:class => 'btn btn-default'} %>
